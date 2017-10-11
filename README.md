@@ -1,2 +1,0 @@
-# nutricare
-Senior project repo
