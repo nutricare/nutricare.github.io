@@ -1,0 +1,488 @@
+//Comments by Liam Rooney
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+	<!---------------
+	
+		The <META> tag is the metadata of the website
+		(data about the data)
+	
+		The <link> tag is used to take external files to
+		attach it to the html, like the CSS document 
+		(used for the look/design of the webpage) 
+		
+		
+	----------------->
+
+	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	<META HTTP-EQUIV="Expires" CONTENT="-1">
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+	<title>BalanceK</title>
+	<link rel="stylesheet" href="styles.css" type="text/css">
+	<link rel="stylesheet" href="calculator.css" type="text/css">
+	<link rel="shortcut icon" href="/images/icono.ico">
+	
+	<script>
+	
+	//weight units is letter associated with the data 
+	//for example exercisesID[2] = 3p (three pounds)
+	
+	// "exercisesID[#]" is used as the ID reference 
+	// for each specific exercise, it's later
+	// used in the "calculateCalories()" function
+			
+			var weightunits ="p";
+			var lang= 'EN';
+			
+	var exercisesIds={};
+	
+		exercisesIds[1] = '2';
+	
+		exercisesIds[2] = '3';
+	
+		exercisesIds[3] = '5';
+	
+		exercisesIds[4] = '8';
+	
+		exercisesIds[5] = '9';
+	
+		exercisesIds[6] = '11';
+	
+		exercisesIds[7] = '13';
+	
+		exercisesIds[8] = '19';
+	
+		exercisesIds[9] = '29';
+	
+		exercisesIds[10] = '6';
+	
+		exercisesIds[11] = '7';
+	
+		exercisesIds[12] = '44';
+	
+	function calculateCalories()
+	{
+	
+	//"exercise" uses the index of the excersisesIds array
+	//and into "exHelper" (used later in the HTML code)
+	
+	//uniqueurl.href is the url of the website, the url will lnk to the appropriate page
+	//weight value, units, exercise, etc. (google.com/calculator.jsp?w=&wu)
+	
+	//there's also code to show a weight unit icon image (like 
+	//for pounds and inches
+	
+		var exerciseMET = document.getElementById('exHelper').value;
+		exercise = exercisesIds[document.getElementById('exHelper').selectedIndex];
+		var weight = document.getElementById("weight");
+		var minutes = document.getElementById("time");
+		var calories = document.getElementById("calories");	
+		calories.value=parseInt(((weight.value*exerciseMET*3.5)/200)*minutes.value);
+		var uniqueurl = document.getElementById("uniqueurl");
+		uniqueurl.href="./calculator.jsp?w=" + weight.value + "&wu=" + weightunits + "&m=" + minutes.value +"&e=" + exercise + "&lang=" + lang;
+	}
+	function showPoundsIcon()
+	{
+		var image = document.getElementById('weightunitsicon');
+		image.src='/images/lbs.png';
+		weightunits='p';
+		uniqueurl.href="./calculator.jsp?w=" + weight.value + "&wu=" + weightunits + "&m=" + minutes.value +"&e=" + exercise + "&lang=" + lang;
+	}	
+	function showKgIcon()
+	{
+		var image = document.getElementById('weightunitsicon');
+		image.src='/images/kg.png';
+		weightunits='k';
+		uniqueurl.href="./calculator.jsp?w=" + weight.value + "&wu=" + weightunits + "&m=" + minutes.value +"&e=" + exercise + "&lang=" + lang;
+	}	
+
+	 
+
+
+function adaptMeasurement(lang)
+{
+
+	//Function to set the language, pretty certain we can
+	//ignore this
+
+	//alert(lang);	
+	if (lang=="ES")
+	{
+		document.getElementById('weightunit1').checked=true;
+		showKg();
+		document.getElementById('heightunit1').checked=true;
+		showMeters();		
+	}
+	if (lang=="EN")
+	{
+		document.getElementById('weightunit2').checked=true;
+		showPounds();
+		document.getElementById('heightunit2').checked=true;
+		showFeetAndInch();
+	}
+	var country = document.getElementById('country').value; 
+	if (country=="ES" || country=="US")
+	{
+		document.getElementById("area").style.visibility="visible";
+		document.getElementById("areaCaption").style.visibility="visible";
+	}
+	if (country!="ES" && country!="US")
+	{
+		document.getElementById("area").style.visibility="hidden";
+		document.getElementById("areaCaption").style.visibility="hidden";
+	}
+	
+	//lots of show functions for various variables and values
+	
+}
+function showKg()
+{
+	document.getElementById('weightUnitCaption').innerHTML="Kg";
+}
+function showPounds()
+{
+	document.getElementById('weightUnitCaption').innerHTML="pounds";
+}
+function showMeters()
+{
+	document.getElementById('divmetros').style.visibility="visible";
+	document.getElementById('divfeet').style.visibility="hidden";
+}
+function showFeetAndInch()
+{
+	document.getElementById('divmetros').style.visibility="hidden";
+	document.getElementById('divfeet').style.visibility="visible";
+}
+function convertToCm(form)
+{
+	var height = form.heightunit;
+	//alert(height[1].checked);
+	if (height[1].checked)
+	{
+		var footToCm = document.getElementById('heightf').value * 30.48;
+		var inchesToCm = document.getElementById('heighti').value * 2.54;
+		var totalCm = footToCm + inchesToCm;
+		document.getElementById('height').value = parseInt(totalCm);
+	}
+	
+	//This country section is also likely unnessecary
+	
+}
+function swapAreas(newCountry)
+{
+	loadAreas(newCountry);
+}
+function loadAreas(country)
+{
+	var areas = document.getElementById('area');
+	
+	areas.options.length = 0;
+	var form = document.getElementById("register");
+	//alert(country);
+	if (country=="ES" || country=="US")
+	{
+		areas.style.visibility="visible";
+		document.getElementById("areaCaption").style.visibility="visible";
+	}
+	else
+	{
+		form.area.style.visibility="hidden";
+		document.getElementById("areaCaption").style.visibility="hidden";
+	}
+	var j=0;
+	var areas = document.getElementById('area');
+	var areasOcultas = document.getElementById('areaOculto');
+	for (var i=0; i < areasOcultas.options.length; i++) {
+		if (areasOcultas.options[i].value==country)
+		{
+			areas.options[j] = new Option (areasOcultas.options[i].text, areasOcultas.options[i].text);
+			//mySelect.options[0].selected="true";
+			j++;	
+		}
+	}
+}
+function isUserNameValid(str) { return /^\w+$/.test(str); }
+function validateNewUser(form)
+{
+	convertToCm(form);
+	var country = document.getElementById('country').value;
+	if (form.user.value=="")
+	{
+		alert("Some parameter was not filled and is needed to use balancek");
+		form.user.style.backgroundColor="red";
+		return false;
+	}
+	if (!isUserNameValid(form.user.value))
+	{
+		alert("The user name can only use letters and numbers"); 
+		form.user.style.backgroundColor="red";
+		return false;
+		
+	}
+	if ( form.password.value=="")
+	{
+		alert("Some parameter was not filled and is needed to use balancek");
+		form.password.style.backgroundColor="red";
+		return false;
+	}
+	if(echeck(form.email.value)==false)
+	{
+		alert ("Mail must be a valid mail");
+		form.email.style.backgroundColor="red";
+		return false;
+	}
+	if (form.lang.value=="" )
+	{
+		alert("Some parameter was not filled and is needed to use balancek");
+		form.lang.style.backgroundColor="red";
+		return false;
+	}	
+	if (form.weight.value =="")
+	{
+		alert("Some parameter was not filled and is needed to use balancek");
+		form.weight.style.backgroundColor="red";
+		return false;
+	}
+	if (form.height.value =="")
+	{
+		alert("Some parameter was not filled and is needed to use balancek");
+		form.height.style.backgroundColor="red";
+		return false;
+	}	
+	if(form.area.value=="0" && (country=="España" || country=="United States"))
+	{
+		alert ("Your area must be specified");
+		return false;
+	}
+	if(isNaN(form.weight.value))
+	{
+		//alert(form.weight.value.indexOf(","));
+		//alert(form.weight.value.indexOf("."));
+		alert("'" + form.weight.value + "' is not a number. ");
+		return false;
+	}
+	if(form.adult.checked==false)
+	{
+		alert("You must be of age to use Balancek.com");
+		return false;
+	}
+	if(isNaN(form.height.value)|| form.height.value.indexOf(",")!=-1|| form.height.value.indexOf(".")!=-1)
+	{
+		alert("'" + form.height.value + "' is not a number.");
+		return false;
+	}
+	if(checkPoint(form.height.value)==false){
+		alert("Enter the height in centimeters without commas or dots.");	 
+		return false;
+	}
+	else{
+		return true;
+	}	
+}
+
+function checkPoint(str){
+	var digits="0123456789,.";
+	var temp;
+	if (form.DESC1.value != ""){
+		for (var i=0;i < str.length;i++){ 
+			temp=str.substring(i,i+1);
+			if (digits.indexOf(temp)==-1){ 
+				return false;
+			}
+		}
+	}
+	return true;
+}
+function echeck(str) {
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		if (str.indexOf(at)==-1){		   
+		   return false
+		}
+
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
+		   return false
+		}
+
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+		    return false
+		}
+
+		 if (str.indexOf(at,(lat+1))!=-1){
+		    return false
+		 }
+
+		 if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+		    return false
+		 }
+
+		 if (str.indexOf(dot,(lat+2))==-1){
+		    return false
+		 }
+		
+		 if (str.indexOf(" ")!=-1){	
+		    return false
+		 }
+
+ 		 return true					
+	}
+	</script>
+</head>
+<body class="body">
+
+<table width="970px" border="0" cellpadding="0" cellspacing="0" align="center">
+	<tr>
+		<td class="sombrabodyleft"></td>
+		<td width="960px">
+			
+<div style="height:64px;width:100%;display:table-cell;">	
+	<img src="/images/login/cabecera_login.png" style="height:64px;"/>
+		
+</div>
+            
+				<table class="tablebody" align="center" width="960px" height="700px" cellspacing="0" cellpadding="0" > 
+					<tr>
+						<td class="tablebody" width="5px" height="100%" ></td>
+						<td class="menuzone" valign="top" width="155px" > 
+							
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-28630734-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+		
+		<div>
+			<table class="menumode" cellpadding="0" cellspacing="0" border="0" align="center">
+				<tr>
+					<td class="menumode" align="center">BalanceK</td>
+				</tr>
+			</table>
+			<ul id="menu"> 
+				<li class="menu"><a class="menu" href= "./index.jsp">Login</a></li>
+				<li class="menu"><a class="menu" href= "./register.jsp">Register</a></li>
+				<li class="menu"><a class="menu" href= "./aboutUs.jsp">About us</a></li>
+		
+			</ul>
+		</div>
+		
+		
+						</td>
+						<td class="content" height="370" valign="top" ><br>						
+					
+				  			<p class="calculatortitle">Calorie Calculator</p>						
+							<div id="calculator">
+								<div class="weight">
+									<div style="background-image: url('/images/arrowright.png');position:absolute;top:30px;width:170px;height:100px;font-size:15px;text-align: center;float:left;">
+										<div style="position:relative;top:39%;">WEIGHT</div>
+									</div>
+									<div>
+										<div style="position:absolute;left:200px;"><input onclick="showKg();calculateCalories();showKgIcon();" type="radio" class="radioinch"  id="weightunit1" name="weightunit" value="k"/></div> 
+										<div style="position:absolute;left:230px;"><span>KILOGRAMS</span></div>																
+										<div style="position:absolute;top:40px;left:200px;"><input onclick="showPounds();calculateCalories();showPoundsIcon();" type="radio" class="radioinch" id="weightunit2"  checked="checked"   name="weightunit" value="p" onkeyup="javascript:calculateCalories();"/></div>																 
+										<div style="position:absolute;top:40px;left:230px;"><span>POUNDS</span></div>
+										<div style="position:absolute;top:80px;left:200px;"><input  class="godinput" size="5" type="text" name="weight" id="weight" onkeyup="javascript:calculateCalories();" value="180" /> <span id="weightUnitCaption"> pounds</span></div>
+										<div style="position:absolute;left:500px;"><img id="weightunitsicon" src="/images/lbs.png"/></div>																
+									</div>																	
+								</div>
+								<div class="time">
+									<div style="background-image: url('/images/arrowright.png');width:170px;height:100px;font-size:15px;text-align: center;float:left;">
+										<div style="position:relative;top:39%;">MINUTES</div>
+									</div>
+									<div>
+										<div style="position:absolute;left:200px;top:30px;"><input  class="godinput" type="text" size="5" id="time" value="60" onkeyup="javascript:calculateCalories();"> minutes</div>
+									</div>
+								</div>	
+								<div class="exercises">
+									<div style="background-image: url('/images/arrowright.png');width:170px;height:100px;font-size:15px;text-align: center;float:left;">
+										<div style="position:relative;top:39%;">EXERCISE</div>
+									</div>
+									<div style="position:absolute;left:200px;top:30px;">
+										<select class="selectexer" name="exHelper" id="exHelper" onchange="javascript:calculateCalories();">															
+											<option value="0">-</option>
+									
+												<option  value="3.0">Walk slow (2mph)</option>
+									
+												<option  value="4.0">Walk normal (3mph)</option>
+									
+												<option  value="6.0">Walk fast (6mph)</option>
+									
+												<option  value="4.0">Bike slow (10mph)</option>
+									
+												<option  value="9.0">Bike fast (16mph)</option>
+									
+												<option  value="7.0">Swim slowly</option>
+									
+												<option  value="14.0">Swim fast</option>
+									
+												<option  value="4.0">Dancing relaxed</option>
+									
+												<option  value="2.0">Bar Method</option>
+									
+												<option  value="7.0">Almost running (7mph)</option>
+									
+												<option  value="8.0">Running slow (8mph)</option>
+									
+												<option  value="6.0">Hip Hop dance</option>
+									
+									</select>
+									</div>
+																																		
+								</div>	
+															
+								<div class="result">
+									CALORIES BURNED 
+									<input type="text" size="3" id="calories" value="0" class="godinput"> 
+									calories
+									<div style="position:absolute;left:50px;width:500px;top:50px;"><a href="" id="uniqueurl">LINK TO THIS CALCULATION (for sharing online or for your bookmarks)</a></div>
+								</div>
+																																					
+							</div>																									
+				
+						</td>
+					</tr>
+				</table>				 			
+			
+
+<table class="footer" align="center" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="center">
+			<p class="footer">Copyright &copy; 2008-2016 All Rights Reserved. Designed by  
+      			<a href="http://www.artifactconsulting.com" target="_blank" class="footer">ArtifactConsulting</a>
+			</p>									
+		</td>
+	</tr>
+</table>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-28630734-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+		</td>
+		<td class="sombrabodyright"></td>
+	</tr>
+</table>
+
+</body>
+</html>
