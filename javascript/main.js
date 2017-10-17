@@ -28,7 +28,7 @@ $(document).ready(function () {
         
         $.each(data, function(i, item) {
             // alert(item.PageName);
-            p.innerHTML += "<div class='button is-success'>" + item.username + " " + i + " " + " </div>";
+            p.innerHTML += "<div><div class='button is-success pad10 border'>" + item.username + " " + i + " " + " </div></div>";
             
         });
         
