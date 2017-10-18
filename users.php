@@ -2,7 +2,7 @@
  
 //  6AfKmwfJGhqIITVF
 // Create connection
-$con=mysqli_connect("localhost","id3292210_ncuser","id3292210_nutricare","nutricare");
+$con=mysqli_connect("localhost","id3292210_nutricare","nutricare1","id3292210_nutricare");
  
 // Check connection
 if (mysqli_connect_errno())
