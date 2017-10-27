@@ -1,7 +1,11 @@
 <?php
  
 // Create connection
+<<<<<<< HEAD:php/get_users.php
 $con=mysqli_connect("localhost","id3292210_ncuser","nutricare1","id3292210_nutricare");
+=======
+$con=mysqli_connect("localhost","id3292210_nutricare","nutricare1","id3292210_nutricare");
+>>>>>>> b526986572b33c98caa28501f6d95b8f35cbb5fe:users.php
  
 // Check connection
 if (mysqli_connect_errno())
