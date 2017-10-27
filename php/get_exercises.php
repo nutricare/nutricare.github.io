@@ -1,8 +1,7 @@
 <?php
  
-//  6AfKmwfJGhqIITVF
 // Create connection
-$con=mysqli_connect("localhost","prabh","6AfKmwfJGhqIITVF","nutricare");
+$con=mysqli_connect("localhost","id3292210_ncuser","nutricare1","id3292210_nutricare");
  
 // Check connection
 if (mysqli_connect_errno())
@@ -11,7 +10,7 @@ if (mysqli_connect_errno())
 }
  
 // This SQL statement selects ALL from the table 'Locations'
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM exercises";
  
 // Check if there are results
 if ($result = mysqli_query($con, $sql))

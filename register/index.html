@@ -9,62 +9,131 @@
   <title>Nutricare Welcome Page</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-
+  <script src="../javascript/jquery-3.2.1.js"></script>
+  <script src="../javascript/main.js"></script>
 
 </head>
 
 <body>
   <section class="section">
-    <div class="container" style="width:35%;">
-
-      <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Text input">
-        </div>
-      </div>
-
+      <div class="container">
+          <div class="notification" style="text-align:center;">
+            Sign-Up for  <strong>Nutricare</strong>
+    
+          </div>
+        </div> 
+    <div class="container" style="width:35%; margin-top:10px;">
+       
+      <!-- .......................................................... Username ............................. -->
+ 
       <div class="field">
         <label class="label">Username</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+        <div class="control has-icons-left ">
+          <input id="Username" class="input " type="text" placeholder="">
+          <!-- is-success -->
           <span class="icon is-small is-left">
-      <i class="fa fa-user"></i>
-    </span>
+            <i class="fa fa-user"></i>
+          </span>
           <span class="icon is-small is-right">
-      <i class="fa fa-check"></i>
-    </span>
+            <i class="fa fa-check"></i>
+          </span>
         </div>
-        <p class="help is-success">This username is available</p>
+        <!-- <p class="help is-success">This username is available</p> -->
       </div>
 
+
+      <!-- .......................................................... First Name ............................. -->
       <div class="field">
+        <label class="label">First Name</label>
+        <div class="control">
+          <input id="First_Name" class="input" type="text" placeholder="">
+        </div>
+      </div>
+
+      <!-- .......................................................... Last Name ............................. -->
+      <div class="field">
+        <label class="label">Last Name</label>
+        <div class="control">
+          <input id="Last_Name" class="input" type="text" placeholder="">
+        </div>
+      </div>
+
+
+      <!-- .......................................................... Height   ............................. -->
+
+      <div class="field">
+        <label class="label">Height</label>
+        <div class="control">
+          <input id="Height" class="input" type="text" placeholder="">
+        </div>
+      </div>
+
+ <!-- .......................................................... Weight   ............................. -->
+
+ <div class="field">
+  <label class="label">Weight</label>
+  <div class="control">
+    <input id="initial_weight" class="input" type="text" placeholder="">
+  </div>
+</div>
+      <!-- <div class="field">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+          <input class="input" type="email" placeholder="Email input">
+          <!- - is-danger - ->
           <span class="icon is-small is-left">
-      <i class="fa fa-envelope"></i>
-    </span>
+            <i class="fa fa-envelope"></i>
+          </span>
           <span class="icon is-small is-right">
-      <i class="fa fa-warning"></i>
-    </span>
+            <i class="fa fa-warning"></i>
+          </span> a
         </div>
-        <p class="help is-danger">This email is invalid</p>
-      </div>
+        <!-- <p class="help is-danger">This email is invalid</p> - ->
+      </div> -->   
+
+      <!-- .......................................................... goal_weight ............................. -->
+
 
       <div class="field">
-        <label class="label">Subject</label>
+        <label class="label">Goal</label>
         <div class="control">
           <div class="select">
-            <select>
-        <option>Select dropdown</option>
-        <option>With options</option>
-      </select>
+            <select id="Goal">
+              <option value="LoseWeight">Lose Weight</option>
+              <option value="GainWeight">Gain Weight</option>
+              <option value="MaintainWeight">Maintain Weight</option>
+              </select>
           </div>
         </div>
       </div>
 
-      <div class="field">
+        <!-- .......................................................... Goal Amount ............................. -->
+
+        <div class="field">
+            <label class="label">Goal Weight</label>
+            <div class="control">
+              <input id="Goal_Amount" class="input" type="text" placeholder="">
+            </div>
+          </div>
+
+          <!-- .......................................................... Address ............................. -->
+
+        <div class="field">
+          <label class="label">Address</label>
+          <div class="control">
+            <input id="Address" class="input" type="text" placeholder="">
+          </div>
+        </div>
+
+        <!-- .......................................................... Password ............................. -->
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input id="password" class="input" type="password" placeholder="">
+          </div>
+        </div>
+      <!-- <div class="field">
         <label class="label">Message</label>
         <div class="control">
           <textarea class="textarea" placeholder="Textarea"></textarea>
@@ -89,16 +158,18 @@
           <label class="radio">
       <input type="radio" name="question">
       No
-    </label>
-        </div>
-      </div>
+    </label> -->
+
+
+      <!-- </div>
+      </div> -->
 
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-link">Submit</button>
+          <button id="submit_reg"  class="button is-link">Submit</button>
         </div>
         <div class="control">
-          <button class="button is-text">Cancel</button>
+          <button class="button is-text" onclick="document.location='/index.html';">Cancel</button>
         </div>
       </div>
 

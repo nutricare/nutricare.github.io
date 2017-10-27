@@ -1,0 +1,46 @@
+nutricareseniorproject@gmail.com
+nutricare1
+
+trello
+context diagram
+user interface
+insert users/post req php
+
+
+<?php
+	$username= "id3292210_ncuser";
+	$password= "nutricare1";
+	$hostname= "localhost"; 
+	
+	$dbhandle = mysql_connect($hostname,$username,$password) or die("could not connect to database");
+	
+	$selected = mysql_select_db("login", $dbhandle);
+	
+	if(isset $_post(['user']) && isset($_post['pass']))
+	{	
+		$user = $_post['user'];
+		$password = $_post ['password'];
+		
+		$query = mysql_query ("select * from users where username = '$user'");
+		// check if the user exists in database;
+		/*if(mysql_num_rows($query) is greater then 0)
+			//{
+				//echo 'username already exists!';
+				
+			//}
+			//else 
+			//{
+				
+				//mysql_query("insert into users (username,first_name,last_name,height,initial_weight, goal_weight,goal_type,initial_bmi address,password)
+				//values ('')");
+			//}
+			*/
+			
+		
+		
+		
+	}
+
+mysql_close();	
+
+?>

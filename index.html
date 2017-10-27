@@ -3,70 +3,162 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Nutricare Welcome Page</title>
-  <link rel="stylesheet" href="css/styles.css">
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-  
-  
-  <script src="javascript/jquery-3.2.1.js"></script>
-  <script src="javascript/main.js"></script>
+    <title>Nutricare Welcome Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+
+
+    <script src="javascript/jquery-3.2.1.js"></script>
+    <script src="javascript/main.js"></script>
 
 </head>
 
 <body>
-  <section class="section">
-<!--      <div class="container">
+    <section class="section">
+        <!--      <div class="container">
       <div class="notification">
         Welcome to  <strong>Nutricare</strong>.
 
       </div> -->
-    </div>
-    <div class="container">
-      <div class="notification">
-        Welcome to  <strong>Nutricare</strong>.
+        <!-- </div> -->
+        <div class="container">
+            <div class="notification">
+                Welcome to
+                <strong>Nutricare</strong>.
 
-      </div>
-    </div>
-    <div class="container" style="width:25%;margin-top:100px;">
+            </div>
+        </div>
+        <div class="container" style="width:25%;margin-top:100px;">
+
+   
+                    <div id="login_view">
+                        <div class="field">
+                            <p class="control has-icons-left has-icons-right">
+                                <input id="username_field" class="input" type="email" placeholder="Username">
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fa fa-check"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control has-icons-left">
+                                <input id="password_field" class="input" type="password" placeholder="Password">
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-lock"></i>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <button id="btn_login" class="button is-success">
+                                    Login
+                                </button>
+                                <button id="btn_register" class="button is-success">
+                                    Sign-Up
+                                </button>
+                            </p>
+                        </div>
+
+                        <div class="field">
+                            <label id="login_status" class="is-success"></label>
+                        </div>
+
+                    </div>
+   
+                <!-- login_view -->
 
 
-      <div class="field">
-        <p class="control has-icons-left has-icons-right">
-          <input class="input" type="email" placeholder="Username">
-          <span class="icon is-small is-left">
-      <i class="fa fa-envelope"></i>
-    </span>
-          <span class="icon is-small is-right">
-      <i class="fa fa-check"></i>
-    </span>
-        </p>
-      </div>
-      <div class="field">
-        <p class="control has-icons-left">
-          <input class="input" type="password" placeholder="Password">
-          <span class="icon is-small is-left">
-      <i class="fa fa-lock"></i>
-    </span>
-        </p>
-      </div>
-      <div class="field">
-        <p class="control">
-          <button id="btn_login" class="button is-success">
-      Login
-    </button>
-
-    <br/><br/>
-    <div  id="phpelement"></div>
  
-        </p>
-      </div>
-    </div>
-  </section>
+
+                    <div id="log_view" class="is-pulled-left" style="display:none; float:left;">
+                        <h1 class="is-large">
+                            <strong>Enter log information</strong>
+                        </h1>
+                        <br>
+                        <div class="field">
+                            <label class="label">Current Weight</label>
+                            <div class="control">
+                                <input id="Current_Weight" class="input" type="text" placeholder="">
+                            </div>
+
+
+                        </div>
+                        <button id="btn_continue" class="button is-success ">
+                            Continue
+                        </button>
+
+                    </div>
+                    <div>  <h2>A</h2> </div>
+                </div>
+
+            <!-- log_view -->
+
+
+
+
+
+
+            <!-- 
+//
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th><abbr title="Position">Pos</abbr></th>
+                    <th>Team</th>
+                    <th><abbr title="Username">Username</abbr></th>
+                    <th><abbr title="Date">Date</abbr></th>
+                    <th><abbr title="Weight">Weight</abbr></th>
+                    <th><abbr title="BMI">BMI</abbr></th>
+                   
+                    <th>Qualification or relegation</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th><abbr title="Position">Pos</abbr></th>
+                    <th>Team</th>
+                    <th><abbr title="Played">Pld</abbr></th>
+                    <th><abbr title="Won">W</abbr></th>
+                    <th><abbr title="Drawn">D</abbr></th>
+                    <th><abbr title="Lost">L</abbr></th>
+                    <th><abbr title="Goals for">GF</abbr></th>
+                    <th><abbr title="Goals against">GA</abbr></th>
+                    <th><abbr title="Goal difference">GD</abbr></th>
+                    <th><abbr title="Points">Pts</abbr></th>
+                    <th>Qualification or relegation</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <th>1</th>
+                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
+                    </td>
+                    <td>38</td>
+                    <td>23</td>
+                    <td>12</td>
+                    <td>3</td>
+                    <td>68</td>
+                    <td>36</td>
+                    <td>+32</td>
+                    <td>81</td>
+                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
+                  </tr>
+                 
+                </tbody>
+              </table> -->
+
+
+
+
+    </section>
 </body>
 
 </html>

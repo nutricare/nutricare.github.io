@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nutricare Welcome Page</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+
+    <script src="../../../javascript/jquery-3.2.1.js"></script>
+
+    <script src="../../../javascript/main.js"></script>
+
+</head>
+
+<body onload="getFood(); getTEST();">
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="notification" style="text-align: center; font-size: 25px;">
+
+                <p>
+                    <strong> NutriCare</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Div holding Exercises -->
+
+        <div style="width: 35%; margin-top: 50px; float: right;">
+
+            <h2>
+                <strong>List of Recommended Exercises</strong>
+            </h2>
+
+            <br>
+
+            <!--
+
+	<label>
+
+      <input type="checkbox" name="Recommended Exercises" value="checkbox" id="RecommendedExercises_0">
+
+      Exercise 1</label>
+
+    <br>
+
+    <label>
+
+      <input type="checkbox" name="Recommended Exercises" value="checkbox" id="RecommendedExercises_1">
+
+      Exercise 2</label>
+
+    <br>
+
+	-->
+
+        </div>
+
+        <!-- Div holding Text Fields -->
+
+        <div style="width: 40; margin-left: 25%; margin-top: 50px ; float: left ;">
+   
+            <label class="label">Food
+             <div class="control">
+                  
+                <!--<div id="phpelement"></div>-->
+                
+                <div id="txtxtxt" class="select is-primary">
+                    <select id="food_item_list" class="is-focused">
+                        <!--<option>List of food items appear here</option>-->
+                        
+                    </select>
+                    </div>
+                
+                
+                
+                
+                <!--</div>-->
+                </div>
+                <!--</select>-->
+
+                <div class="field">
+
+                    <label class="label">Quantity</label>
+
+                    <div class="control">
+
+                        <input id="Quantity" class="input" type="text" value="1" style="width:150px">
+                        <img id="minus1" src="../images/minus.png" width="32" height="25" class="minus" />
+<!--  -->
+                        <img id="add1" src="../images/plus.png" width="32" height="25" class="add" />
+                    </div>
+
+
+                    <div class="field">
+
+                        <label class="label">Calories</label>
+
+                        <div class="control">
+
+                            <input id="Calories" class="input" type="text" placeholder="125" style="width:150px">
+
+                        </div>
+
+                    </div>
+
+                    <div class="field">
+
+                        <strong>
+                            <label for="select">Preferred Exercise Group:</label>
+                        </strong>
+
+                        <br>
+                        
+                        <div class="select">
+                        <select name="select" id="select">
+
+                            <option value="Choose Exercise Group">Choose Exercise Group</option>
+
+                            <option value="Team Indoors">Team Outdoors</option>
+
+                            <option value="Team Indoors">Team Indoors</option>
+
+                            <option value="Solo Outdoors">Solo Water </option>
+
+                            <option value="Solo Indoors">Team Water</option>
+
+                            <option value="Team Indoors">Running/Jogging/Walking</option>
+
+                            <option value="Solo Outdoors">Chores
+
+                            </option>
+
+                            <option value="Solo Indoors">Solo Outdoors
+
+                            </option>
+
+                            <option value="Solo Indoors">Solo Indoors
+
+                            </option>
+
+                            <option value="Solo Indoors">Miscellaneous
+
+                            </option>
+
+                        </select>
+                    </div>
+                        <div class="control"> </div>
+
+                    </div>
+
+                    <!--
+
+     <div class="field">
+
+        <label class="label">Email</label>
+
+        <div class="control has-icons-left has-icons-right">
+
+          <input class="input" type="email" placeholder="Email input">
+
+          <!- - is-danger - ->
+
+          <span class="icon is-small is-left">
+
+            <i class="fa fa-envelope"></i>
+
+          </span>
+
+          <span class="icon is-small is-right">
+
+            <i class="fa fa-warning"></i>
+
+          </span>
+
+        </div> -->
+
+                    <!-- <p class="help is-danger">This email is invalid</p>
+
+      </div>  -->
+
+                    <div class="control">
+
+                        <button id="showexercises" class="button is-link">Calculate</button>
+
+                    </div>
+
+                    <div class="control">
+
+                        <button class="button is-text" onclick="document.location='/index.html';">Cancel</button>
+
+                    </div>
+
+                </div>
+
+    </section>
+
+    <button onclick="myFunction()">Calculate</button>
+
+    <button onclick="getTEST()">TEST</button>
+
+    <p id="demo"></p>
+
+    <script>
+
+        function myFunction() {
+
+            var greeting;
+
+            var time = new Date().getHours();
+
+            if (time < 10) {
+
+                greeting = "Good morning";
+
+            } else if (time < 20) {
+
+                greeting = "Good day";
+
+            } else {
+
+                greeting = "Good evening";
+
+            }
+
+            document.getElementById("demo").innerHTML = greeting;
+
+        }
+
+    </script>
+
+</body>
