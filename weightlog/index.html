@@ -6,19 +6,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nutricare Welcome Page</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Nutricare Weight Log</title>
+    <link rel="stylesheet" href="/css/styles.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
 
 
-    <script src="javascript/jquery-3.2.1.js"></script>
-    <script src="javascript/main.js"></script>
+    <script src="/javascript/jquery-3.2.1.js"></script>
+    <script src="/javascript/main.js"></script>
 
 </head>
 
-<body>
+<body onload="loadPage('weight_log');">
 
     <!-- _____________________________________________________________________ nav __________________  -->
 
@@ -41,7 +41,7 @@
                     <span class="icon">
                         <!-- <i class="fa fa-home"></i> -->
                     </span>
-                    Login Page
+                    Login
                 </a>
                 <a class="navbar-item" href="https://nutricare.000webhostapp.com/home" style="color:black;font-size:20px;">
                     <span class="icon">
@@ -81,50 +81,68 @@
         <!-- </div> -->
         <div class="container">
             <div class="notification">
-                Welcome to
-                <strong>Nutricare</strong>.
+                <strong>Weight Log</strong>
 
             </div>
         </div>
-        <div class="container" style="width:25%;margin-top:100px;">
+        <div class="container" style="width:25%;margin-top:40px;">
 
-            <div id="login_view">
-                <div class="field">
-                    <p class="control has-icons-left has-icons-right">
-                        <input id="username_field" class="input" type="email" placeholder="Username">
-                        <span class="icon is-small is-left">
-                            <i class="fa fa-envelope"></i>
-                        </span>
-                        <span class="icon is-small is-right">
-                            <i class="fa fa-check"></i>
-                        </span>
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control has-icons-left">
-                        <input id="password_field" class="input" type="password" placeholder="Password">
-                        <span class="icon is-small is-left">
-                            <i class="fa fa-lock"></i>
-                        </span>
-                    </p>
-                </div>
-                <div class="field">
-                    <p class="control">
-                        <button id="btn_login" class="button is-primary">
-                            Login
-                        </button>
-                        <button id="btn_register" class="button is-success">
-                            Sign-Up
-                        </button>
-                    </p>
-                </div>
 
-                <div class="field">
-                    <label id="login_status" class="is-success"></label>
-                </div>
 
+        </div>
+
+
+        <div id="log_view">
+
+            <div class="columns">
+                <div class="column is-3" style="margin-left:25%;margin-right:10%;">
+
+                    <h1 class="is-large">
+                        <strong>Enter log information</strong>
+                    </h1>
+                    <br>
+                    <div class="field">
+                        <label class="label">Current Weight</label>
+                        <div class="control">
+                            <input id="Current_Weight" class="input" type="text" placeholder="" style="width:300px;">
+                        </div>
+
+
+                    </div>
+                    <button id="btn_add_log" class="button is-success ">
+                        Add
+                    </button>
+
+                    <button class="button is-success" onclick="document.location='/home';">
+                        Continue
+                    </button>
+
+                    <!-- log_view -->
+
+                </div>
+                <div class="column">
+
+                    <div class="column is-half">
+                        <h1 style="color:#00D1B2;"><strong><em> User Weight Log</em></strong></h1>
+                        <br/>
+                        <table id="wlogtable" class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth is-hoverable">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Weight</th>
+                                    <th>BMI</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="wlogrow">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
             </div>
-            <!-- login_view -->
 
         </div>
 

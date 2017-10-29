@@ -3,80 +3,136 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Nutricare Welcome Page</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
-  <script src="../javascript/jquery-3.2.1.js"></script>
-  <script src="../javascript/main.js"></script>
+    <title>Nutricare Welcome Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">
+    <script src="../javascript/jquery-3.2.1.js"></script>
+    <script src="../javascript/main.js"></script>
 
 </head>
 
 <body>
-  <section class="section">
-      <div class="container">
-          <div class="notification" style="text-align:center;">
-            Sign-Up for  <strong>Nutricare</strong>
-    
-          </div>
-        </div> 
-    <div class="container" style="width:35%; margin-top:10px;">
-       
-      <!-- .......................................................... Username ............................. -->
- 
-      <div class="field">
-        <label class="label">Username</label>
-        <div class="control has-icons-left ">
-          <input id="Username" class="input " type="text" placeholder="">
-          <!-- is-success -->
-          <span class="icon is-small is-left">
-            <i class="fa fa-user"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fa fa-check"></i>
-          </span>
+    <!-- _____________________________________________________________________ nav __________________  -->
+
+    <nav class="navbar is-light">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://nutricare.000webhostapp.com">
+                <h1 style="color:#00D1B2; font-weight:bolder; font-size:30px;font-style:italic;">NutriCare</h1>
+
+            </a>
+            <div class="navbar-burger burger" data-target="navMenuColorlight-example">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <!-- <p class="help is-success">This username is available</p> -->
-      </div>
 
+        <div id="navMenuColorlight-example" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="https://nutricare.000webhostapp.com" style="color:black;font-size:20px;">
+                    <span class="icon">
+                        <i class="fa fa-home"></i>
+                    </span>
 
-      <!-- .......................................................... First Name ............................. -->
-      <div class="field">
-        <label class="label">First Name</label>
-        <div class="control">
-          <input id="First_Name" class="input" type="text" placeholder="">
+                    Home
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="field is-grouped">
+
+                        <p class="control">
+                            <a class="button is-success" href="/register">
+                                <span class="icon">
+                                    <i class="fa fa-user-plus"></i>
+                                </span>
+                                <span>Sign-Up</span>
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </nav>
 
-      <!-- .......................................................... Last Name ............................. -->
-      <div class="field">
-        <label class="label">Last Name</label>
-        <div class="control">
-          <input id="Last_Name" class="input" type="text" placeholder="">
+    <!-- _____________________________________________________________________ BODY START ____________________________________  -->
+    <section class="section">
+        <div class="container">
+            <div class="notification" style="text-align:center;">
+                Sign-Up for
+                <strong>Nutricare</strong>
+
+            </div>
         </div>
-      </div>
+
+        <div class="container" style="width:65%; margin-top:10px;">
+
+            <!-- .......................................................... Username ............................. -->
+
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Username</label>
+                        <div class="control has-icons-left ">
+                            <input id="Username" class="input " type="text" placeholder="">
+                            <!-- is-success -->
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-user"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fa fa-check"></i>
+                            </span>
+                        </div>
+                        <!-- <p class="help is-success">This username is available</p> -->
+                    </div>
 
 
-      <!-- .......................................................... Height   ............................. -->
+                    <!-- .......................................................... First Name ............................. -->
+                    <div class="field">
+                        <label class="label">First Name</label>
+                        <div class="control">
+                            <input id="First_Name" class="input" type="text" placeholder="">
+                        </div>
+                    </div>
 
-      <div class="field">
-        <label class="label">Height</label>
-        <div class="control">
-          <input id="Height" class="input" type="text" placeholder="">
-        </div>
-      </div>
+                    <!-- .......................................................... Last Name ............................. -->
+                    <div class="field">
+                        <label class="label">Last Name</label>
+                        <div class="control">
+                            <input id="Last_Name" class="input" type="text" placeholder="">
+                        </div>
+                    </div>
 
- <!-- .......................................................... Weight   ............................. -->
 
- <div class="field">
-  <label class="label">Weight</label>
-  <div class="control">
-    <input id="initial_weight" class="input" type="text" placeholder="">
-  </div>
-</div>
-      <!-- <div class="field">
+                    <!-- .......................................................... Height   ............................. -->
+
+                    <div class="field">
+                        <label class="label">Height</label>
+                        <div class="control">
+                            <input id="Height" class="input" type="text" placeholder="">
+                        </div>
+                    </div>
+
+                    <!-- .......................................................... Weight   ............................. -->
+
+
+
+                    <div class="field">
+                        <label class="label">Weight</label>
+                        <div class="control">
+                            <input id="initial_weight" class="input" type="text" placeholder="">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="column">
+                    <!-- <div class="field">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
           <input class="input" type="email" placeholder="Email input">
@@ -89,90 +145,69 @@
           </span> a
         </div>
         <!-- <p class="help is-danger">This email is invalid</p> - ->
-      </div> -->   
-
-      <!-- .......................................................... goal_weight ............................. -->
-
-
-      <div class="field">
-        <label class="label">Goal</label>
-        <div class="control">
-          <div class="select">
-            <select id="Goal">
-              <option value="LoseWeight">Lose Weight</option>
-              <option value="GainWeight">Gain Weight</option>
-              <option value="MaintainWeight">Maintain Weight</option>
-              </select>
-          </div>
-        </div>
-      </div>
-
-        <!-- .......................................................... Goal Amount ............................. -->
-
-        <div class="field">
-            <label class="label">Goal Weight</label>
-            <div class="control">
-              <input id="Goal_Amount" class="input" type="text" placeholder="">
-            </div>
-          </div>
-
-          <!-- .......................................................... Address ............................. -->
-
-        <div class="field">
-          <label class="label">Address</label>
-          <div class="control">
-            <input id="Address" class="input" type="text" placeholder="">
-          </div>
-        </div>
-
-        <!-- .......................................................... Password ............................. -->
-
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control">
-            <input id="password" class="input" type="password" placeholder="">
-          </div>
-        </div>
-      <!-- <div class="field">
-        <label class="label">Message</label>
-        <div class="control">
-          <textarea class="textarea" placeholder="Textarea"></textarea>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="control">
-          <label class="checkbox">
-      <input type="checkbox">
-      I agree to the <a href="#">terms and conditions</a>
-    </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <div class="control">
-          <label class="radio">
-      <input type="radio" name="question">
-      Yes
-    </label>
-          <label class="radio">
-      <input type="radio" name="question">
-      No
-    </label> -->
-
-
-      <!-- </div>
       </div> -->
 
-      <div class="field is-grouped">
-        <div class="control">
-          <button id="submit_reg"  class="button is-link">Submit</button>
-        </div>
-        <div class="control">
-          <button class="button is-text" onclick="document.location='/index.html';">Cancel</button>
-        </div>
-      </div>
+                    <!-- .......................................................... goal_weight ............................. -->
 
-    </div>
-  </section>
+
+                    <div class="field">
+                        <label class="label">Goal</label>
+                        <div class="control">
+                            <div class="select">
+                                <select id="Goal">
+                                    <option value="LoseWeight">Lose Weight</option>
+                                    <option value="GainWeight">Gain Weight</option>
+                                    <option value="MaintainWeight">Maintain Weight</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- .......................................................... Goal Amount ............................. -->
+
+                    <div class="field">
+                        <label class="label">Goal Weight</label>
+                        <div class="control">
+                            <input id="Goal_Amount" class="input" type="text" placeholder="">
+                        </div>
+                    </div>
+
+                    <!-- .......................................................... Address ............................. -->
+
+                    <div class="field">
+                        <label class="label">Address</label>
+                        <div class="control">
+                            <input id="Address" class="input" type="text" placeholder="">
+                        </div>
+                    </div>
+
+                    <!-- .......................................................... Password ............................. -->
+
+                    <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control">
+                            <input id="password" class="input" type="password" placeholder="">
+                        </div>
+                    </div>
+
+
+
+
+                    <br/>
+                    <div class="field is-grouped">
+                            <label class="label"></label>
+                            
+                        <div class="control">
+                            <button id="submit_reg" class="button is-link">Submit</button>
+                        </div>
+                        <div class="control">
+                            <button class="button is-text" onclick="document.location='/index.html';">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+</html>
